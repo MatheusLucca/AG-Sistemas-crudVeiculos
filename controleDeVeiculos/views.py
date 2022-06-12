@@ -2,9 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
+from .models import Controle
+
 
 def index(request):
-    return render(request, 'index.html')
+    controles = Controle.objects.all()
+    return render(request, 'index.html', {'controles': controles})
 
 
 def veiculos(request):
