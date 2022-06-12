@@ -15,17 +15,17 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-warning bg-light">
-        <a href="">Controle de Veículos</a>
-        <ul class="nav navbar-nav">
+    <nav class="navbar navbar-expand navbar-warning bg-light d-flex justify-content-around">
+        <span> Controle de Veículos</span>
+        <ul class="nav navbar-nav ms-5">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Pagina inicial</a>
+                <a class="nav-link" href="{% url 'index' %}">Pagina inicial</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Veículos</a>
+                <a class="nav-link" href="{% url 'veiculos' %}">Veículos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Motoristas</a>
+                <a class="nav-link" href="{% url 'motorista' %}">Motoristas</a>
             </li>
         </ul>
     </nav>

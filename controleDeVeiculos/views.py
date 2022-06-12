@@ -5,3 +5,11 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, 'index.html')
+
+
+def veiculos(request):
+    return render(request, 'veiculos/form.html')
+
+
+def motorista(request):
+    return render(request, 'motorista/form.html')
