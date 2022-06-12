@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+
+{% block title %} Editar Controle{% endblock%}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        Cadastrar um controle
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Dados do controle</h4>
+        {% include 'baseControleForm.html' %}
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+
+
+{% endblock  %}

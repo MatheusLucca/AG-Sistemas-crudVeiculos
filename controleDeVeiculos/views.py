@@ -13,3 +13,11 @@ def veiculos(request):
 
 def motorista(request):
     return render(request, 'motorista/form.html')
+
+
+def cadastrarControle(request):
+    return render(request, 'criarControle.html')
+
+
+def editarControle(request):
+    return render(request, 'editarControle.html')

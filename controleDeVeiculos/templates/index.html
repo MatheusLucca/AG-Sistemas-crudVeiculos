@@ -6,7 +6,8 @@
 
 <div class="card">
     <div class="card-header">
-        <a name="" id="" class="btn btn-success" href="#" role="button">Adicionar novo controle</a>
+        <a name="" id="" class="btn btn-success" href="{% url 'cadastrarControle' %}" role="button">Adicionar novo
+            controle</a>
     </div>
     <div class="card-body">
         <h4 class="card-title">Controle de veículos</h4>
@@ -22,7 +23,12 @@
             <tbody>
                 <tr>
                     <td scope="row">Nome: Camaro</td>
-                    <td>Visualizar | Editar | Excluir</td>
+                    <td>
+                        <a name="" id="" class="btn btn-primary me-2" href="#" role="button">Visualizar</a>
+                        <a name="" id="" class="btn btn-warning me-2" href="{% url 'editarControle' %}"
+                            role="button">Editar</a>
+                        <a name="" id="" class="btn btn-danger" href="#" role="button">Excluir</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
