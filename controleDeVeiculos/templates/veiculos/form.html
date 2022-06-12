@@ -1,9 +1,21 @@
 {% extends "base.html"%}
 
-{% block title %} Cadastrar veículo {% endblock%}
+{% block title %} Cadastrar Controle{% endblock%}
 
 {% block content %}
 
-Formulário para adicionar veículo
+<div class="card">
+    <div class="card-header">
+        Cadastrar um veiculo
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Dados do controle</h4>
+        {% include 'baseControleForm.html'%}
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+
 
 {% endblock  %}

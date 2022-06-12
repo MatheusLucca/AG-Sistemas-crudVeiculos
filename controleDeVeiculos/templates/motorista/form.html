@@ -1,9 +1,21 @@
 {% extends "base.html"%}
 
-{% block title %} Cadastrar motorista{% endblock%}
+{% block title %} Cadastrar Motorista{% endblock%}
 
 {% block content %}
 
-Formulário para adicionar motorista
+<div class="card">
+    <div class="card-header">
+        Cadastrar um motorista
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Dados do Motorista</h4>
+        {% include 'baseControleForm.html'%}
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+
 
 {% endblock  %}

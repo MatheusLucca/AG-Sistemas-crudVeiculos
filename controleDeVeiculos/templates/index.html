@@ -21,7 +21,17 @@
                 </tr>
             </thead>
             <tbody>
-
+                {% for  controle in controles  %}
+                <tr>
+                    <td scope="row">{{ controle }}</td>
+                    <td>
+                        <a name="" id="" class="btn btn-primary me-2" href="#" role="button">Visualizar</a>
+                        <a name="" id="" class="btn btn-warning me-2" href="{% url 'editar' %}" role="button">Editar</a>
+                        <a name="" id="" class="btn btn-danger" href="{% url 'excluir' controle.id %}"
+                            role="button">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
 
