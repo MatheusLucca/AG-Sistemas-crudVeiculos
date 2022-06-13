@@ -30,12 +30,12 @@ class Controle(models.Model):
     cod_motorista = models.ForeignKey(Motorista, on_delete=models.CASCADE)
     data_saida = models.DateField()
     hora_saida = models.TimeField()
-    km_saida = models.FloatField()
+    km_saida = models.IntegerField()
     destino = models.CharField(max_length=200)
     data_retorno = models.DateField()
     hora_retorno = models.TimeField()
-    km_retorno = models.FloatField()
-    km_percorrido = models.FloatField()
+    km_retorno = models.IntegerField()
+    km_percorrido = models.IntegerField()
 
     def __str__(self):
         title = 'Veículo: ' + self.cod_veiculos.veiculo + \
