@@ -25,7 +25,8 @@
                 <tr>
                     <td scope="row">{{ controle }}</td>
                     <td>
-                        <a name="" id="" class="btn btn-primary me-2" href="#" role="button">Visualizar</a>
+                        <a name="" id="" class="btn btn-primary me-2" href="{% url 'visualizar' controle.id %}"
+                            role="button">Visualizar</a>
                         <a name="" id="" class="btn btn-warning me-2" href="{% url 'editar' controle.id%}"
                             role="button">Editar</a>
                         <a name="" id="" class="btn btn-danger" href="{% url 'excluir' controle.id %}"
