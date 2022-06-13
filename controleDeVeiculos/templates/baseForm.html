@@ -6,10 +6,17 @@
         <label for="{{ campo.name }}" class="form-label">{{ campo.label }}</label>
 
         <input type="{{ campo.field.widget.input_type }}" class="form-control" name="{{ campo.name }}"
-            id="{{ campo.name }}" placeholder="{{ campo.label }}">
+            id="{{ campo.name }}" placeholder="{{ campo.label }}" value="{{ campo.value | default:'' }}">
     </div>
     <div class="col-12 help-text text-danger"> {{ campo.errors }}</div>
     {% endfor %}
 
     <input name="" id="" class="btn btn-success" type="submit" value="Salvar informações">
+    {% if messages %}
+    {% for message in messages %}
+    <br>
+    <span {% if message.tags %} class=" {{ message.tags }} " {% endif %}> Informações salvas com sucessos </span>
+    {% endfor %}
+
+    {% endif %}
 </form>
