@@ -3,46 +3,76 @@
 {% block title %} Página inicial{% endblock%}
 
 {% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <label for="date" class="form-label me-3">Pesquisar por data de saida:</label>
+            <input type="date" name="date" id="date" class="me-3">
+            <button type="submit" class="btn btn-primary ">Pesquisar</button>
+            <a name="" id="" class="btn btn-success ms-auto d-inline-block" href="{% url 'cadastrarControle' %}"
+                role="button">Adicionar novo
+                controle</a>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Controle de veículos</h4>
 
-<div class="card">
-    <div class="card-header">
-        <a name="" id="" class="btn btn-success" href="{% url 'cadastrarControle' %}" role="button">Adicionar novo
-            controle</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Info</th>
+                        <th>Ações</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for  controle in controles  %}
+                    <tr>
+                        <td scope="row">{{ controle }}</td>
+                        <td>
+                            <a name="" id="" class="btn btn-primary me-2" href="{% url 'visualizar' controle.id %}"
+                                role="button">Visualizar</a>
+                            <a name="" id="" class="btn btn-warning me-2" href="{% url 'editar' controle.id%}"
+                                role="button">Editar</a>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#modelId">
+                                Excluir
+                            </button>
+                        </td>
+                    </tr>
+                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Confirmar Exclusão</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Você tem certeza que quer excluir esse controle?
+                                </div>
+                                <div class="modal-footer">
+                                    <a name="" id="" class="btn btn-danger" href="{% url 'excluir' controle.id %}"
+                                        role="button">Excluir</a>
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Voltar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!-- Modal -->
+
+
+        </div>
+        <div class="card-footer text-muted">
+
+        </div>
     </div>
-    <div class="card-body">
-        <h4 class="card-title">Controle de veículos</h4>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Info</th>
-                    <th>Ações</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                {% for  controle in controles  %}
-                <tr>
-                    <td scope="row">{{ controle }}</td>
-                    <td>
-                        <a name="" id="" class="btn btn-primary me-2" href="{% url 'visualizar' controle.id %}"
-                            role="button">Visualizar</a>
-                        <a name="" id="" class="btn btn-warning me-2" href="{% url 'editar' controle.id%}"
-                            role="button">Editar</a>
-                        <a name="" id="" class="btn btn-danger" href="{% url 'excluir' controle.id %}"
-                            role="button">Excluir</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
-
-
-    </div>
-    <div class="card-footer text-muted">
-
-    </div>
-</div>
+</form>
 
 {% endblock  %}

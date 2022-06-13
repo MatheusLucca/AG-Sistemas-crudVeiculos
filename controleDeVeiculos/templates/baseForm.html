@@ -22,7 +22,8 @@
     {% if messages %}
     {% for message in messages %}
     <br>
-    <span {% if message.tags %} class=" {{ message.tags }} " {% endif %}> Informações salvas com sucessos </span>
+    <span {% if message.tags %} class=" {{ message.tags }} alert alert-success mt-4 d-inline-block " {% endif %}>
+        {{message}} </span>
     {% endfor %}
 
     {% endif %}
