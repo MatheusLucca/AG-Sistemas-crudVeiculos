@@ -38,7 +38,7 @@ def cadastrarControle(request):
 def visualizarControle(request, id):
     controle = Controle.objects.get(id=id)
     formulario = ControleForm(request.POST or None, instance=controle)
-    return render(request, 'visualizarControle.html', {'formulario': formulario})
+    return render(request, 'visualizarControle.html', {'formulario': formulario, 'view': True})
 
 
 def editarControle(request, id):
