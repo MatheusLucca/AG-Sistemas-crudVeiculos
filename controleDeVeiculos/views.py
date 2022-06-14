@@ -121,5 +121,7 @@ def editarControle(request, id):
 def excluirControle(request, id):
     reset()
     controle = Controle.objects.get(id=id)
-    controle.delete()
-    return redirect('index')
+    if request.method == 'POST':
+        controle.delete()
+        return redirect('index')
+    return render(request, 'excluirControle.html')

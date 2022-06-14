@@ -58,38 +58,16 @@
                                 role="button"><i class="fa-solid fa-eye"></i></a>
                             <a name="" id="" class="btn btn-warning me-2" href="{% url 'editar' controle.id%}"
                                 role="button"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#modelId">
+                            <a name="" id="" class="btn btn-danger me-2" href="{% url 'excluir' controle.id%}"
+                                role="button">
                                 <i class="fa-solid fa-trash-can"></i>
-                            </button>
+                            </a>
                         </td>
                     </tr>
-                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Confirmar Exclusão</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Você tem certeza que quer excluir esse controle?
-                                </div>
-                                <div class="modal-footer">
-                                    <a name="" id="" class="btn btn-danger" href="{% url 'excluir' controle.id %}"
-                                        role="button">Excluir</a>
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Voltar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     {% endfor %}
                 </tbody>
             </table>
-            <!-- Modal -->
+
 
 
         </div>
