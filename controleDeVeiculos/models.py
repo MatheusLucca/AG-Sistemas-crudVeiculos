@@ -1,6 +1,6 @@
 
 from django.db import models
-
+from datetime import datetime
 # Create your models here.
 
 
@@ -38,6 +38,13 @@ class Controle(models.Model):
     km_percorrido = models.IntegerField()
 
     def __str__(self):
+        str_data_saida = str(self.data_saida)
+        data_saida = datetime.strptime(str_data_saida, '%Y-%m-%d').date()
+        data_saida = datetime.strftime(data_saida, '%d/%m/%Y')
+        str_data_retorno = str(self.data_retorno)
+        data_retorno = datetime.strptime(str_data_retorno, '%Y-%m-%d').date()
+        data_retorno = datetime.strftime(data_retorno, '%d/%m/%Y')
+
         title = 'Veículo: ' + self.cod_veiculos.veiculo + \
             ' - ' + 'Motorista: ' + self.cod_motorista.nome
         return title

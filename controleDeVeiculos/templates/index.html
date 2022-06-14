@@ -3,6 +3,25 @@
 {% block title %} Página inicial{% endblock%}
 
 {% block content %}
+{% if edit %}
+<span class="alert alert-success mb-4 d-inline-block" role="alert">
+    <span>Controle editado com sucesso</span>
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+</span>
+{% endif %}
+{% if cad %}
+<span class="alert alert-success mb-4 d-inline-block" role="alert">
+    <span>Controle cadastrado com sucesso</span>
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+</span>
+{% endif %}
+{% if oleo %}
+<br>
+<span class="alert alert-warning mb-4 d-inline-block" role="alert">
+    <span> O veículo {{ veiculo.veiculo }} da placa {{ veiculo.placa }} precisa trocar o óleo</span>
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+</span>
+{% endif %}
 <form method="POST">
     {% csrf_token %}
     <div class="card">
@@ -28,15 +47,20 @@
                 <tbody>
                     {% for  controle in controles  %}
                     <tr>
-                        <td scope="row">{{ controle }}</td>
+                        <td scope="row">Veiculo: {{ controle.cod_veiculos }} - Motorista: {{ controle.cod_motorista}}
+                            <br>
+                            Data saida: {{ controle.data_saida|date:'d/m/Y' }}
+                            <br>
+                            Data retorno: {{ controle.data_retorno|date:'d/m/Y'}}
+                        </td>
                         <td>
                             <a name="" id="" class="btn btn-primary me-2" href="{% url 'visualizar' controle.id %}"
-                                role="button">Visualizar</a>
+                                role="button"><i class="fa-solid fa-eye"></i></a>
                             <a name="" id="" class="btn btn-warning me-2" href="{% url 'editar' controle.id%}"
-                                role="button">Editar</a>
+                                role="button"><i class="fa-solid fa-pen-to-square"></i></a>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                 data-bs-target="#modelId">
-                                Excluir
+                                <i class="fa-solid fa-trash-can"></i>
                             </button>
                         </td>
                     </tr>
