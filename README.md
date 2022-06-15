@@ -8,3 +8,6 @@
  - Conectar com o banco de dados no arquivo settings.py
  - Rodar no terminal: python manage.py runserver
  - A aplicação estará rodando em localhost:8000
+
+
+![index](.github/index.png)
